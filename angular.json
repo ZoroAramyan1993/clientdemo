@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
+
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "clientdemo"
+    }
+  },
+  "defaultProject": "clientdemo",
+  "cli": {
+    "analytics": "ccd51b64-d768-4ddd-b5af-87bffc67f0d7"
+  }
 }
