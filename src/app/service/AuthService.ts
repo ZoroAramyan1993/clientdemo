@@ -15,14 +15,13 @@ export class AuthService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-   signUpUser(user: User) {
-     // tslint:disable-next-line:variable-name
-     return this.http.post(`${this.httpUrl}/save`, user).// tslint:disable-next-line:variable-name
-     pipe(tap(_ => this.log(`registering widh name  ${user.name}`)),
-       catchError(this.handleError('registrating user'))
-     );
 
-   }
+ signUpUser(user: User){
+    return this.http.post(`${this.httpUrl}/save`, user).pipe(
+      tap(_ => this.log(`registrating client width name ${user.name}`)),
+      catchError(this.handleError('Registrating user'))
+    );
+  }
 
 
   attempthAuth(user: User): Observable<any>{
@@ -40,7 +39,6 @@ export class AuthService {
         tap(_ => this.log(`authenticating client ${user.email}`)),
         catchError(this.handleError('Authenticating user'))
       );
-
   }
 
   private handleError<T>(operation = 'operation', result?: T){
