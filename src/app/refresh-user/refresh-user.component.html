@@ -1,0 +1,57 @@
+<p>refresh-user works!</p>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<!--a [routerLink]="['/account']"-->
+<div>
+  <ul>
+    <li><a href="home">Home</a></li>
+<!--    <li ><a href="account">Show account</a></li>-->
+<!--    <li><a [routerLink]="['/transfer']">Transfer</a></li>-->
+
+
+<!--      <ul>-->
+<!--        <li><a href="submitRefresh">submit refresh</a></li>-->
+        <li><a href="refresh">refresh</a></li>
+<!--        <li><a href="deleteClient">delete client</a></li>-->
+<!--        <li><a href="showMoney">show money</a></li>-->
+<!--      </ul>-->
+
+  </ul>
+  <button (click)="logout()" id="logout">logout</button>
+</div>
+<div>
+  <form (ngSubmit)="update(refreshForm.value)" novalidate #refreshForm = "ngForm" >
+    <br>
+    <p>input user id</p>
+    <input type="text" name="clientsId" ngModel #clientId = "ngModel"  required placeholder="input user id">
+
+    <p>input name</p>
+    <input type="text" name="namer" ngModel #name="ngModel" required placeholder="input your name">
+
+    <p>input surname</p>
+    <input type="text" name="surName" ngModel #surName="ngModel" required placeholder="input your surName">
+
+    <p>input email</p>
+    <input type="text" name="email" ngModel #account="ngModel" required placeholder="input your account">
+
+    <p>input money of clients card</p>
+    <input type="text" name="password" ngModel #password="ngModel"  placeholder="input your password">
+
+    <input type="submit" id="refreshButton" name="refreshButton" value="refresh" [disabled] = "!refreshForm.form.valid">
+
+    <!--    <input type="button" name="refreshButton" value="refresh" [disabled] = !submitRefreshForm.form.valid>-->
+    <span id="ok" style="color:red"></span>
+    <h3></h3>
+
+  </form>
+  <h1 *ngIf="t">success refresh</h1>
+  <h1 *ngIf="error">error</h1>
+</div>
+</body>
+</html>

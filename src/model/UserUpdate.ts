@@ -1,5 +1,5 @@
-export interface User{
- // id: number;
+export class UserUpdate {
+  id: number;
   name: string;
   surName: string;
   email: string;

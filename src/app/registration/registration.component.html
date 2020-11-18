@@ -26,7 +26,6 @@
     <input type="text" name="surName" #ngSurName="ngModel" ngModel #surName   id="surName" placeholder="surName" required>
     <input type="text" name="email" #ngEmail="ngModel" ngModel #email id="email" placeholder="Email" required>
     <input type="password" name="password" #ngPassword="ngModel" ngModel #password id="passwords" placeholder="Password" required>
-
     <button type="submit" id="but" value="register" [disabled]=!registrationForm.valid class="registerbtn">Register</button>
   </div>
   <form>
@@ -36,10 +35,9 @@
     <p *ngIf="submitted">{{successMessage}}</p>
   </div>
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a></p>
+    <p>Already have an account? <a [routerLink]="['/login']" >Sign in</a></p>
   </div>
 </form>
-
 
 
 
