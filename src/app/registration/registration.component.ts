@@ -20,15 +20,16 @@ export class RegistrationComponent implements OnInit {
   email: string;
 
   @Input()loginForm;
-  id: bigint;
-  loginError: false;
-requiredLogin: false;
+//   id: bigint;
+//   loginError: false;
+// requiredLogin: false;
 
 
   constructor(private authService: AuthService, private router: Router, private userService: UserService, private location: Location) { }
 
   onSubmit(registrationForm: User){
      this.user = {
+       id:null,
        name: registrationForm.name, surName: registrationForm.surName, email: registrationForm.email,
        password: registrationForm.password
      };

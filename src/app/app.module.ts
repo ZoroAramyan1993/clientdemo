@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RefreshUserComponent } from './refresh-user/refresh-user.component';
 import {UserService} from './service/UserService';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {UserService} from './service/UserService';
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    RefreshUserComponent
+    RefreshUserComponent,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+<p>delete-user works!</p>
+
+<html>
+<body>
+<div>
+  <ul>
+
+
+      <ul>
+        <li ><a href="refresh-user">refresh</a></li>
+        <li ><a href="delete-user">delete</a></li>
+      </ul>
+
+  </ul>
+  <button (click)="logout()">logout</button>
+</div>
+<br>
+
+<div style="width: 700px">
+  <form (ngSubmit)="deleteUser(deleteForm.value.userId)" novalidate #deleteForm="ngForm">
+    <input type="text" name="userId" ngModel #userId="ngModel" required placeholder="input id">
+    <input type="submit" name="delete" id="button" value="delete" [disabled]="!deleteForm.form.valid">
+    <h1 *ngIf="submitted">{{sucessmessage}}</h1>
+  </form>
+  <div id="money"></div>
+
+</div>
+</body>
+</html>

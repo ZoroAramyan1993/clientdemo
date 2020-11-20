@@ -1,5 +1,5 @@
 export class UserUpdate {
-  id: number;
+  userId:number;
   name: string;
   surName: string;
   email: string;

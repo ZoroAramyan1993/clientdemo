@@ -15,16 +15,11 @@ export class RefreshUserComponent implements OnInit {
   manager = false;
   a: string;
   t = false;
-  role: string;
   error: boolean;
   constructor(private location: Location, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.role = localStorage.getItem("role");
-    // tslint:disable-next-line:triple-equals
-    if (this.role=='MANAGER'){
-      this.manager = true;
-    }
+
   }
 
   update(refreshForm: UserUpdate){

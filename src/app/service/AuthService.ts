@@ -62,11 +62,19 @@ export class AuthService {
      email: user.email,
      password: user.password
     };
-    return this.http.put(`${this.httpUrl}/update?userId=${user.id}`, details).pipe(
+    return this.http.put(`${this.httpUrl}/update?userId=${user.userId}`, details).pipe(
       tap(_ => this.log(' ok')),
       catchError(this.handleError(' error'))
     );
   }
+
+  delete(id: bigint) {
+    return this.http.delete(`${this.httpUrl}/delete/${id}`).pipe(
+      tap(_ => this.log(' ok')),
+      catchError(this.handleError(' error'))
+    );
+  }
+
 
   private handleError<T>(operation = 'operation', result?: T){
     return (error: any): Observable<T> => {

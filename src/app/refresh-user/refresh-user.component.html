@@ -7,20 +7,14 @@
 </head>
 
 <body>
-<!--a [routerLink]="['/account']"-->
+<!--a [routerLink]="['/']"-->
 <div>
   <ul>
     <li><a href="home">Home</a></li>
-<!--    <li ><a href="account">Show account</a></li>-->
-<!--    <li><a [routerLink]="['/transfer']">Transfer</a></li>-->
 
 
-<!--      <ul>-->
-<!--        <li><a href="submitRefresh">submit refresh</a></li>-->
-        <li><a href="refresh">refresh</a></li>
-<!--        <li><a href="deleteClient">delete client</a></li>-->
-<!--        <li><a href="showMoney">show money</a></li>-->
-<!--      </ul>-->
+        <li><a href="refresh-user">refresh</a></li>
+    <li ><a href="delete-user">delete user</a></li>
 
   </ul>
   <button (click)="logout()" id="logout">logout</button>
@@ -29,21 +23,21 @@
   <form (ngSubmit)="update(refreshForm.value)" novalidate #refreshForm = "ngForm" >
     <br>
     <p>input user id</p>
-    <input type="text" name="clientsId" ngModel #clientId = "ngModel"  required placeholder="input user id">
+    <input type="text" name="userId" ngModel #ngUserId = "ngModel"  #userId required placeholder="input user id">
 
     <p>input name</p>
-    <input type="text" name="namer" ngModel #name="ngModel" required placeholder="input your name">
+    <input type="text" name="name" #ngName="ngModel" ngModel #name required placeholder="input your name">
 
     <p>input surname</p>
-    <input type="text" name="surName" ngModel #surName="ngModel" required placeholder="input your surName">
+    <input type="text" name="surName" ngModel #surName="ngModel" #surName required placeholder="input your surName">
 
     <p>input email</p>
-    <input type="text" name="email" ngModel #account="ngModel" required placeholder="input your account">
+    <input type="text" name="email" ngModel #email="ngModel" #email required placeholder="input your email">
 
     <p>input money of clients card</p>
-    <input type="text" name="password" ngModel #password="ngModel"  placeholder="input your password">
+    <input type="text" name="password" ngModel #password="ngModel" #password placeholder="input your password">
 
-    <input type="submit" id="refreshButton" name="refreshButton" value="refresh" [disabled] = "!refreshForm.form.valid">
+    <input type="submit" id="refreshButton" name="refreshButton" value="refresh" [disabled] = !refreshForm.valid>
 
     <!--    <input type="button" name="refreshButton" value="refresh" [disabled] = !submitRefreshForm.form.valid>-->
     <span id="ok" style="color:red"></span>
